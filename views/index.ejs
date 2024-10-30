@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Reviews</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>My Book Reviews</h1>
+    <a href="/books/add">Add a New Book</a>
+    <ul>
+      <% books.forEach(book => { %>
+      <li>
+        <img src="<%= book.cover_url %>" alt="Cover image" width="100" />
+        <h3><%= book.title %> by <%= book.author %></h3>
+        <p>Rating: <%= book.rating %> | Date Read: <%= book.date_read %></p>
+        <p><%= book.review %></p>
+      </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
